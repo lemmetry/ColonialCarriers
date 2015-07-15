@@ -1,0 +1,19 @@
+Location:
+{{ item.facility.name }}
+{{ item.facility.street_address }}
+{{ item.facility.phone_number }}
+
+===================================
+
+Item(s) description:
+{{ item.item_description }}
+
+===================================
+
+Additional information:
+{{ item.additional_information }}
+
+===================================
+
+Reported:
+{{ item.time_stamp }}

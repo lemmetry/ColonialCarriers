@@ -1,0 +1,83 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="{% static 'colonialcarriersdotcom/img/favicon.png' %}">
+  <title>Colonial Carriers</title>
+
+  <link href="{% static 'bootstrap-3.3.4/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'colonialcarriersdotcom/css/base.css' %}" rel="stylesheet">
+  <!-- font awesome-->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  {% block head_extension %}
+  {% endblock %}
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row hidden-xs" id="ornament">
+      <img src="{% static 'colonialcarriersdotcom/img/ornament_header.png' %}" alt="Colonial Carriers" />
+    </div>
+    <div class="row">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills nav-justified">
+            <li {% ifequal active_navbar 'homepage' %}class="active"{% endifequal %}><a href="{% url 'homepage' %}">Home</a></li>
+            <li {% ifequal active_navbar 'lost_item' %}class="active"{% endifequal %}><a href="{% url 'lost_item' %}">Lost</a></li>
+            <li {% ifequal active_navbar 'found_item' %}class="active"{% endifequal %}><a href="{% url 'found_item' %}">Found</a></li>
+            <li {% ifequal active_navbar 'partners' %}class="active"{% endifequal %}><a href="{% url 'partners' %}">Our Partners</a></li>
+          </ul>
+        </nav>
+      </div><!-- /header -->
+
+      <div style="margin-top: -10px;">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div><!-- /row -->
+
+    <div class="row">
+      <div class="footer">
+        <div class="row hidden-xs" id="ornament">
+          <img src="{% static 'colonialcarriersdotcom/img/ornament_footer.png' %}" alt="" />
+        </div>
+        <div class="row text-muted">
+          <div class="col-xs-6">
+            <i class="fa fa-envelope fa-fw"></i>Colonial.Carriers@gmail.com
+            <br><i class="fa fa-phone fa-fw"></i>757.585.4114
+            <br><i class="fa fa-map-marker fa-fw"></i>P.O. Box 2441, Williamsburg, VA 23187
+          </div>
+          <div class="col-xs-6">
+            <a href="{% url 'terms' %}" class="pull-right">Terms of Service</a>
+            <br><a href="{% url 'privacy' %}" class="pull-right">Privacy policy</a>
+          </div>
+        </div>
+      </div><!-- /footer -->
+    </div><!-- /row -->
+
+  </div> <!-- /container -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="{% static 'bootstrap-3.3.4/js/bootstrap.min.js' %}"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="{% static 'colonialcarriersdotcom/js/ie10-viewport-bug-workaround.js' %}"></script>
+
+</body>
+</html>

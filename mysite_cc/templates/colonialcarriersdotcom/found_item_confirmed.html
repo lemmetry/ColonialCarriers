@@ -1,0 +1,84 @@
+{% extends base_template %}
+{% load static from staticfiles %}
+
+{% block head_extension %}
+    <link href="{% static 'colonialcarriersdotcom/css/found_item_confirmed.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <h3>Print this page and attach it to the item(s).</h3>
+    </div>
+
+    <div class="row" id="printer_friendly">
+    	<div class=".col-md-6 .col-md-offset-3">
+    		<div class="panel panel-default">
+    			<div class="panel-heading">
+    				<h3 class="panel-title"><strong>Pickup summary</strong></h3>
+    			</div>
+    			<div class="panel-body">
+    				<div class="table-responsive">
+    					<table class="table table-condensed">
+    						<tbody>
+    							<tr>
+    								<td>
+                                        <strong>Location:</strong>
+                                    </td>
+    								<td>
+                                        <p class="text-right">{{ item.facility }}
+                                        <br>{{ item.facility.street_address }}
+                                        <br>{{ item.facility.city }}, {{ item.facility.state }} {{ item.facility.zip }}
+                                        <br>{{ item.facility.format_phone_number }}</p>
+                                    </td>
+    							</tr>
+                                <tr>
+                                    <td>
+                                        <strong>Item(s) description:</strong>
+                                    </td>
+                                    <td>
+                                        <p class="text-right">{{ item.item_description }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Additional information:</strong>
+                                    </td>
+                                    <td>
+                                        <p class="text-right">{{ item.additional_information }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Reported:</strong>
+                                    </td>
+                                    <td>
+                                        <p class="text-right">{{ item.time_stamp }}</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+    					</table>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="row">
+        <div class=".col-md-6 .col-md-offset-3">
+            <input type="button" class="btn btn-default pull-left" onclick="printArea('printer_friendly')" value="Print" />
+        </div>
+    </div>
+
+<script>
+function printArea(id) {
+     var printContent = document.getElementById(id).innerHTML;
+     var originalContent = document.body.innerHTML;
+
+     document.body.innerHTML = printContent;
+     window.print();
+     document.body.innerHTML = originalContent;
+}
+</script>
+
+{% endblock %}

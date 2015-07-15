@@ -1,0 +1,27 @@
+{% extends base_template %}
+{% load staticfiles %}
+
+{% block head_extension %}
+    <link href="{% static 'colonialcarriersdotcom/css/partners.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <h3>Meet Our Partners</h3>
+    <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3 logo-cell">
+            <img class="img-responsive thumb" alt="Days Inn Hotels" src="http://www.daysinn.com/etc/designs/wyndham/clientlibs_daysinn/images/content/print-logo.png">
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 logo-cell">
+            <img class="img-responsive thumb" alt="Hampton" src="http://hamptoninn3.hilton.com/skins/en_US/HP/img/logo_brand_HP.gif">
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 logo-cell">
+            <img class="img-responsive thumb" alt="Hilton Garden Inn" src="http://hiltongardeninn3.hilton.com/skins/en_US/GI/img/logo_brand_GI.png">
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 logo-cell">
+            <img class="img-responsive thumb" alt="La Quinta Inns & Suites" src="http://www.lq.com/content/dam/lq/lq-com/global/la-quinta-logo.png">
+        </div>
+
+    </div>
+
+{% endblock %}

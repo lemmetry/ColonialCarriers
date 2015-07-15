@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<style type="text/css">
+table {
+    width: 100%;
+}
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table tr:nth-child(even) {
+    background-color: #fff;
+}
+table tr:nth-child(odd) {
+    background-color: #eee;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+
+<table>
+    <tr>
+        <th>Location:</th>
+        <td>
+            {{ item.facility.name }}
+            <br>{{ item.facility.street_address }}
+            <br>{{ item.facility.phone_number }}
+        </td>
+    </tr>
+    <tr>
+        <th>Item(s) description:</th>
+        <td>{{ item.item_description }}</td>
+    </tr>
+    <tr>
+        <th>Additional information:</th>
+        <td>{{ item.additional_information }}</td>
+    </tr>
+    <tr>
+        <th>Reported:</th>
+        <td>{{ item.time_stamp }}</td>
+    </tr>
+</table>
+
+</body>
+</html>
