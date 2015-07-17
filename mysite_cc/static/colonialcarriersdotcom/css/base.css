@@ -1,21 +1,30 @@
 html {
     position: relative; /* footer */
     min-height: 100%;  /* footer */
-    font-family: Georgia serif;
-    font-style: italic;
 }
 
 body {
     padding-top: 20px;
     padding-bottom: 20px;
-    background: repeating-linear-gradient(
-        90deg,
-        #F5F5DC,
-        #F5F5DC 10px,
-        #FFFFF5 10px,
-        #FFFFF5 20px)
-        fixed;
+    background: #F5F3ED;
     margin-bottom: 60px; /* footer */
+    font-family: 'Fjord One', serif;
+    font-size: 1.7em;
+}
+
+a {
+    color: black;
+}
+
+a:focus,
+a:hover {
+    color: #700000;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+    background-color: #700000;
 }
 
 .header {
@@ -68,11 +77,11 @@ body {
 }
 
 .footer .row {
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: 0px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
     margin-bottom: 15px;
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 .footer .fa {

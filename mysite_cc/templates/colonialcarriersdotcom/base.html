@@ -16,7 +16,9 @@
 
   <!-- Custom styles for this template -->
   <link href="{% static 'colonialcarriersdotcom/css/base.css' %}" rel="stylesheet">
-  <!-- font awesome-->
+
+  <!-- fonts -->
+  <link href="http://fonts.googleapis.com/css?family=Fjord+One" rel="stylesheet" type="text/css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
   {% block head_extension %}
@@ -32,8 +34,12 @@
 <body>
 
   <div class="container">
+  <!--
     <div class="row hidden-xs" id="ornament">
       <img src="{% static 'colonialcarriersdotcom/img/ornament_header.png' %}" alt="Colonial Carriers" />
+    </div>
+    <div class="row visible-xs" id="ornament">
+      <img src="{% static 'colonialcarriersdotcom/img/logocolor.png' %}" alt="Colonial Carriers" />
     </div>
     <div class="row">
       <div class="header clearfix">
@@ -47,11 +53,39 @@
         </nav>
       </div><!-- /header -->
 
-      <div style="margin-top: -10px;">
-        {% block content %}
-        {% endblock %}
-      </div>
-    </div><!-- /row -->
+    <div class="hidden-xs" id="ornament">
+      <img src="{% static 'colonialcarriersdotcom/img/ornament_header.png' %}" alt="Colonial Carriers" />
+    </div>
+
+    <div>
+      <nav class="navbar navbar-default" role="navigation" style="background-color: transparent; border: none;">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+          </button>
+          <div class="visible-xs">
+            <img src="{% static 'colonialcarriersdotcom/img/logo50x50.png' %}" alt="Colonial Carriers" style="vertical-align: middle; margin-left: 15px;"/>
+            <span style="">Colonial Carriers</span>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" style="padding-top: 10px;">
+          <ul class="nav nav-pills nav-justified">
+            <li {% ifequal active_navbar 'homepage' %}class="active"{% endifequal %}><a href="{% url 'homepage' %}">Home</a></li>
+            <li {% ifequal active_navbar 'lost_item' %}class="active"{% endifequal %}><a href="{% url 'lost_item' %}">Lost</a></li>
+            <li {% ifequal active_navbar 'found_item' %}class="active"{% endifequal %}><a href="{% url 'found_item' %}">Found</a></li>
+            <li {% ifequal active_navbar 'partners' %}class="active"{% endifequal %}><a href="{% url 'partners' %}">Our Partners</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
 
     <div class="row">
       <div class="footer">
