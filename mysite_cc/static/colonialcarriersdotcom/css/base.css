@@ -80,7 +80,6 @@ a:hover {
     padding-right: 0;
     padding-left: 0;
     margin-right: 0;
-    margin-bottom: 15px;
     margin-left: 0;
 }
 
@@ -92,5 +91,17 @@ a:hover {
 #ornament img {
     display: block;
     margin: auto;
-    padding-bottom: 10px;
+}
+
+.xs-text-center {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .sm-text-left {
+        text-align: left;
+    }
+    .sm-text-right {
+        text-align: right;
+    }
 }
