@@ -5,20 +5,15 @@
     left: 0;
     right:0;
 }
-.row-table {
-    display: table;
-    table-layout: fixed;
-    height: 100%;
-}
-.logo-cell {
-    display: table-cell;
+.partner-logo {
+    list-style: none;
     vertical-align: middle;
     padding: 65px;
 }
-.logo-cell:hover {
+.partner-logo:hover {
     opacity: 0.75;
 }
-.logo-cell > img {
+.partner-logo > img {
     display: block;
     margin: auto;
 }
