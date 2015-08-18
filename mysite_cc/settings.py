@@ -36,7 +36,7 @@ RECAPTCHA_USE_SSL = True
 # email
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'noreply.colonial.carriers@gmail.com'
-EMAIL_HOST_PASSWORD = 'Willy1699Wonka'
+EMAIL_HOST_PASSWORD = 'obhlxggedojsjlsy'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
