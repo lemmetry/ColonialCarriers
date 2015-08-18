@@ -36,7 +36,9 @@
   <div class="container">
 
     <div class="hidden-xs" id="ornament">
-      <img src="{% static 'colonialcarriersdotcom/img/ornament_header.png' %}" alt="Colonial Carriers" />
+      <a href="{% url 'homepage' %}">
+        <img src="{% static 'colonialcarriersdotcom/img/ornament_header.png' %}" alt="Colonial Carriers" />
+      </a>
     </div>
 
     <div>
@@ -49,7 +51,9 @@
              <span class="icon-bar"></span>
           </button>
           <div class="visible-xs">
-            <img src="{% static 'colonialcarriersdotcom/img/logo50x50.png' %}" alt="Colonial Carriers" style="vertical-align: middle; margin-left: 15px;"/>
+            <a href="{% url 'homepage' %}" style="text-decoration:none;">
+              <img src="{% static 'colonialcarriersdotcom/img/logo50x50.png' %}" alt="Colonial Carriers" style="vertical-align: middle; margin-left: 15px;"/>
+            </a>
             <span style="">Colonial Carriers</span>
           </div>
         </div>
