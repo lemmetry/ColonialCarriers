@@ -35,13 +35,13 @@
 
   <div class="container">
 
-    <div class="hidden-xs" id="ornament">
+    <div class="row hidden-xs" id="ornament">
       <a href="{% url 'homepage' %}">
         <img src="{% static 'colonialcarriersdotcom/img/ornament_header.png' %}" alt="Colonial Carriers" />
       </a>
     </div>
 
-    <div>
+    <div class="row">
       <nav class="navbar navbar-default" role="navigation" style="background-color: transparent; border: none;">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -68,7 +68,7 @@
       </nav>
     </div>
 
-    <div id="double-line"></div>
+    <div class="row" id="double-line"></div>
 
     {% block content %}
     {% endblock %}
@@ -87,6 +87,11 @@
           <div class="col-xs-12 col-sm-6 xs-text-center sm-text-right">
             <a href="{% url 'terms' %}">Terms of Service</a><br>
             <a href="{% url 'privacy' %}">Privacy policy</a>
+          </div>
+        </div>
+        <div class="row text-muted small" style="padding-top: 10px; padding-bottom: 20px">
+          <div class="col-xs-12 text-center">
+            All trademarks cited herein are the property of their respective owners.
           </div>
         </div>
       </div><!-- /footer -->

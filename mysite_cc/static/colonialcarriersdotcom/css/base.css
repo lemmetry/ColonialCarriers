@@ -7,7 +7,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     background: #F5F3ED;
-    margin-bottom: 60px; /* footer */
+    margin-bottom: 160px; /* footer */
     font-family: 'Fjord One', serif;
     font-size: 1.7em;
 }
@@ -76,7 +76,7 @@ a:hover {
 
 .footer {
     position: absolute;
-    height: 60px;
+    height: 160px;
     padding-top: 10px;
     border-top: 0;
     bottom: 0;
