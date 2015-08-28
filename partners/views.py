@@ -6,10 +6,25 @@ from django.template import Context
 from django.template.loader import get_template
 from .forms import PickupForm
 from .models import Item, Facility
+import threading
 
 
 # Create your views here.
 base_template = 'base.html'
+
+
+class EmailThread(threading.Thread):  # TODO look into celery
+    def __init__(self, subject, text_content, html_content, to):
+        self.subject = subject
+        self.text_content = text_content
+        self.html_content = html_content
+        self.to = to
+        threading.Thread.__init__(self)
+
+    def run(self):
+        msg = EmailMultiAlternatives(subject=self.subject, body=self.text_content, to=self.to)
+        msg.attach_alternative(self.html_content, "text/html")
+        msg.send()
 
 
 def homepage(request):
@@ -38,7 +53,16 @@ def found_item(request):
                             additional_information=additional_information)
             new_item.save()
 
-            notify_by_email(new_item)
+            email_subject = facility.name
+            email_text_template = get_template('email.txt')
+            email_html_template = get_template('email.html')
+            email_context = Context({'item': new_item})
+            email_text_content = email_text_template.render(email_context)
+            email_html_content = email_html_template.render(email_context)
+            email_send_to = ['colonial.carriers@gmail.com']
+            
+            email_thread = EmailThread(email_subject, email_text_content, email_html_content, email_send_to)
+            email_thread.start()
 
             request.session["item_pk"] = new_item.pk
             return HttpResponseRedirect(reverse('found_item_confirmed'))
@@ -48,21 +72,6 @@ def found_item(request):
                'active_navbar': 'found_item',
                'form': form}
     return render(request, 'found_item.html', context)
-
-
-def notify_by_email(item):
-    text_template = get_template('email.txt')
-    html_template = get_template('email.html')
-
-    context = Context({'item': item})
-
-    text_content = text_template.render(context)
-    html_content = html_template.render(context)
-
-    msg = EmailMultiAlternatives(subject=item.facility.name, body=text_content, to=['colonial.carriers@gmail.com'])
-    msg.attach_alternative(html_content, "text/html")
-    msg.send()
-    return
 
 
 def found_item_confirmed(request):
