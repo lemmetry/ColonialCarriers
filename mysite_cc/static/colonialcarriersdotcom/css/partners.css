@@ -13,7 +13,7 @@
 .partner-logo:hover {
     opacity: 0.75;
 }
-.partner-logo > img {
+.partner-logo > a > img {
     display: block;
     margin: auto;
 }
