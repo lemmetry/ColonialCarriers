@@ -37,7 +37,7 @@
 
     <div class="row hidden-xs" id="ornament">
       <a href="{% url 'homepage' %}">
-        <img src="{% static 'colonialcarriersdotcom/img/ornament_header.png' %}" alt="Colonial Carriers" />
+        <img src="{% static 'colonialcarriersdotcom/img/ornament_header.png' %}" alt="Colonial Carriers">
       </a>
     </div>
 
@@ -52,9 +52,9 @@
           </button>
           <div class="visible-xs">
             <a href="{% url 'homepage' %}" style="text-decoration:none;">
-              <img src="{% static 'colonialcarriersdotcom/img/logo50x50.png' %}" alt="Colonial Carriers" style="vertical-align: middle; margin-left: 15px;"/>
+              <img src="{% static 'colonialcarriersdotcom/img/logo50x50.png' %}" alt="Colonial Carriers" style="vertical-align: middle; margin-left: 15px;">
             </a>
-            <span style="">Colonial Carriers</span>
+            <span>Colonial Carriers</span>
           </div>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse" style="padding-top: 10px;">
@@ -76,13 +76,28 @@
     <div class="row">
       <div class="footer">
         <div class="row hidden-xs" id="ornament">
-          <img src="{% static 'colonialcarriersdotcom/img/ornament_footer.png' %}" alt="" />
+          <img src="{% static 'colonialcarriersdotcom/img/ornament_footer.png' %}" alt="">
         </div>
         <div class="row text-muted small">
           <div class="col-xs-12 col-sm-6 xs-text-center sm-text-left text-muted">
-            <i class="fa fa-envelope fa-fw"></i>Colonial.Carriers@gmail.com<br>
-            <i class="fa fa-phone fa-fw"></i>757.585.4114<br>
-            <i class="fa fa-map-marker fa-fw"></i>P.O. Box 2441, Williamsburg, VA 23187
+
+            <ul>
+                <li>
+                    <a href="https://facebook.com/colonialcarriers">
+                        <i class="fa fa-facebook-official fa-fw"></i>/ColonialCarriers
+                    </a>
+                </li>
+                <li>
+                    <i class="fa fa-envelope fa-fw"></i>Colonial.Carriers@gmail.com
+                </li>
+
+                <li>
+                    <i class="fa fa-phone fa-fw"></i>757.585.4114
+                </li>
+                <li>
+                    <i class="fa fa-map-marker fa-fw"></i>P.O. Box 2441, Williamsburg, VA 23187
+                </li>
+            </ul>
           </div>
           <div class="col-xs-12 col-sm-6 xs-text-center sm-text-right">
             <a href="{% url 'terms' %}">Terms of Service</a><br>
@@ -99,9 +114,14 @@
 
   </div> <!-- /container -->
 
+<!--
+    TODO CLEANUP: convert inline css to external
+-->
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="{% static 'bootstrap-3.3.4/js/bootstrap.min.js' %}"></script>
   <script src="{% static 'colonialcarriersdotcom/js/google-analytics.js' %}"></script>
+  <script src="{% static 'colonialcarriersdotcom/js/facebook.js' %}"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="{% static 'colonialcarriersdotcom/js/ie10-viewport-bug-workaround.js' %}"></script>
 

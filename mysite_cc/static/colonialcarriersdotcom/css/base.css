@@ -98,6 +98,20 @@ a:hover {
     margin-right: 5px;
 }
 
+.footer a {
+    color: #777;
+}
+
+.footer a:focus,
+.footer a:hover {
+    color: #700000;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
 #ornament img {
     display: block;
     margin: auto;
@@ -114,4 +128,17 @@ a:hover {
     .sm-text-right {
         text-align: right;
     }
+}
+
+.btn_fb {
+    font-family: "Tahoma", sans-serif, "Lucida Grande";
+    color: #ffffff;
+    background-color: #3b5998;
+    padding: 4px 8px 2px;
+    border-radius: 3px;
+}
+.btn_fb:focus,
+.btn_fb:hover {
+    color: #ffffff;
+    background-color: #8b9dc3;
 }
